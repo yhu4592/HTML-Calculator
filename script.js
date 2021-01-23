@@ -1,6 +1,7 @@
 let screen = document.getElementById("screen");
 
 let clear = document.getElementById("clear");
+
 clear.addEventListener("click", () => {
     screen.innerHTML = "";
 });
@@ -8,7 +9,20 @@ clear.addEventListener("click", () => {
 function write (event){
     let object = document.getElementById(event.target.id);
     var text = object.innerHTML;
-    console.log(text);
+    var toScreen = document.createTextNode(text);
+    screen.appendChild(toScreen);
+}
+
+/*function positiveNegative (event){
+    let object = document.getElementById(event.target.id);
+    var text = object.innerHTML;
+
+}*/
+
+function solve(){
+    let object = document.getElementById("screen");
+    var text = eval(object.innerHTML);
+    screen.innerHTML = "";
     var toScreen = document.createTextNode(text);
     screen.appendChild(toScreen);
 }
@@ -41,10 +55,6 @@ let divide = document.getElementById("divide");
 divide.addEventListener("click", write);
 let positiveNegative = document.getElementById("positiveNegative");
 positiveNegative.addEventListener("click", write);
-
-function solve(){
-    
-}
 
 let equal = document.getElementById("equal");
 equal.addEventListener("click", solve);
