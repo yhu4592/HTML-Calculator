@@ -15,12 +15,8 @@ function write (event){
 
 function changeSign (){
     var num = parseInt(screen.innerHTML);
-    console.log(num);
-    console.log(typeof(num));
     num = num * -1;
-    console.log(num);
     var text = num.toString();
-    console.log(text);
     screen.innerHTML = "";
     var toScreen = document.createTextNode(text);
     screen.appendChild(toScreen);
@@ -60,7 +56,8 @@ let multiply = document.getElementById("multiply");
 multiply.addEventListener("click", write);
 let divide = document.getElementById("divide");
 divide.addEventListener("click", write);
-let positiveNegative = document.getElementById("positiveNegative");
-positiveNegative.addEventListener("click", changeSign);
 let equal = document.getElementById("equal");
 equal.addEventListener("click", solve);
+
+let positiveNegative = document.getElementById("positiveNegative");
+positiveNegative.addEventListener("click", changeSign);
