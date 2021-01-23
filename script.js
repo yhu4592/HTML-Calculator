@@ -1,33 +1,37 @@
-let screen = document.getElementById("screen");
+let textScreen = document.getElementById("textScreen");
 
 let clear = document.getElementById("clear");
 
 clear.addEventListener("click", () => {
-    screen.innerHTML = "";
+    textScreen.innerHTML = "";
 });
 
 function write (event){
     let object = document.getElementById(event.target.id);
     var text = object.innerHTML;
     var toScreen = document.createTextNode(text);
-    screen.appendChild(toScreen);
+    textScreen.appendChild(toScreen);
 }
 
 function changeSign (){
     var num = parseInt(screen.innerHTML);
     num = num * -1;
     var text = num.toString();
-    screen.innerHTML = "";
+    textScreen.innerHTML = "";
     var toScreen = document.createTextNode(text);
-    screen.appendChild(toScreen);
+    textScreen.appendChild(toScreen);
 }
 
 function solve(){
-    let object = document.getElementById("screen");
+    let object = document.getElementById("textScreen");
+    let history = document.getElementById("history");
+    var toHistory = document.createTextNode(object.innerHTML);
+    history.innerHTML = "";
+    history.appendChild(toHistory);
     var text = eval(object.innerHTML);
-    screen.innerHTML = "";
+    textScreen.innerHTML = "";
     var toScreen = document.createTextNode(text);
-    screen.appendChild(toScreen);
+    textScreen.appendChild(toScreen);
 }
 
 let one = document.getElementById("1");
