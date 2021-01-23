@@ -13,11 +13,18 @@ function write (event){
     screen.appendChild(toScreen);
 }
 
-/*function positiveNegative (event){
-    let object = document.getElementById(event.target.id);
-    var text = object.innerHTML;
-
-}*/
+function changeSign (){
+    var num = parseInt(screen.innerHTML);
+    console.log(num);
+    console.log(typeof(num));
+    num = num * -1;
+    console.log(num);
+    var text = num.toString();
+    console.log(text);
+    screen.innerHTML = "";
+    var toScreen = document.createTextNode(text);
+    screen.appendChild(toScreen);
+}
 
 function solve(){
     let object = document.getElementById("screen");
@@ -54,7 +61,6 @@ multiply.addEventListener("click", write);
 let divide = document.getElementById("divide");
 divide.addEventListener("click", write);
 let positiveNegative = document.getElementById("positiveNegative");
-positiveNegative.addEventListener("click", write);
-
+positiveNegative.addEventListener("click", changeSign);
 let equal = document.getElementById("equal");
 equal.addEventListener("click", solve);
